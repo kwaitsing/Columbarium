@@ -1,11 +1,27 @@
-# Columbarium
+import type { Result, RuntimeRoute, Elysia, RequestOPT, ObjectAny } from "ashes-urn";
+import { t } from "ashes-urn";
+import { sysConf, urn } from "../../..";
+import { gateway } from "../../gateway";
+import RootInterface from "./RootInterface";
 
-A timeoutDB, call webhook when time is up
+const root = () => {
+    let resultObject: Result = {
+        status: 'ok',
+        data: `Columbarium database ${sysConf.version}`
+    }
 
-Usage below
+    return resultObject
+}
 
-```ts
- {
+// Define Routes
+const routes: RuntimeRoute[] = [
+    {// This will be passed to your gateway
+        path: '/',
+        method: 'get',
+        isDirect: true,
+        handler: root
+    },
+    {// Add a new 
         path: "/record/:task_id",
         method: "post",
         isDirect: false,
@@ -42,9 +58,11 @@ Usage below
             })
         }
     }
-```
+]
 
-> Webhook
-```
-GET /?task_id=0 HTTP/1.1
-```
+
+// Module Loader
+// External will overwrite Internal routes, making it more flexible
+export function loader(app: Elysia) {
+    urn.loadRoute(routes, app, gateway)
+}
