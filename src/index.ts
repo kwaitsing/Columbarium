@@ -14,8 +14,8 @@ const env = urn.env()
 
 export const sysConf = {
     version: "Kowloon@build620",
-    auth: args.p || env.PSK || "mC4AhCQ3QPmVjfc8XLi6",
-    port: args.a || env.PORT || 8000
+    auth: args.a || env.AUTH || "mC4AhCQ3QPmVjfc8XLi6",
+    port: args.p || env.PORT || 8000
 }
 
 // Server conf for urn.ignite()

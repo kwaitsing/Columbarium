@@ -22,7 +22,7 @@ const routes: RuntimeRoute[] = [
         handler: root
     },
     {// Add a new 
-        path: "/record/:task_id",
+        path: "/api/v1/record/:task_id",
         method: "post",
         isDirect: false,
         handler: RootInterface.add,
@@ -37,7 +37,7 @@ const routes: RuntimeRoute[] = [
         }
     },
     {
-        path: "/record/:task_id",
+        path: "/api/v1/record/:task_id",
         method: "put",
         isDirect: false,
         handler: RootInterface.update,
@@ -48,7 +48,7 @@ const routes: RuntimeRoute[] = [
         }
     },
     {
-        path: "/record/:task_id",
+        path: "/api/v1/record/:task_id",
         method: "delete",
         isDirect: false,
         handler: RootInterface.del,

@@ -6,7 +6,7 @@ Usage below
 
 ```ts
  {
-        path: "/record/:task_id",
+        path: "/api/v1/record/:task_id",
         method: "post",
         isDirect: false,
         handler: RootInterface.add,
@@ -21,7 +21,7 @@ Usage below
         }
     },
     {
-        path: "/record/:task_id",
+        path: "/api/v1/record/:task_id",
         method: "put",
         isDirect: false,
         handler: RootInterface.update,
@@ -32,7 +32,7 @@ Usage below
         }
     },
     {
-        path: "/record/:task_id",
+        path: "/api/v1/record/:task_id",
         method: "delete",
         isDirect: false,
         handler: RootInterface.del,

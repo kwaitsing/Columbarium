@@ -1,6 +1,7 @@
 {
-  "name": "Columbarium",
-  "version": "1.0.50",
+  "name": "columbarium",
+  "version": "2.0.0",
+  "codename": "Aries",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
